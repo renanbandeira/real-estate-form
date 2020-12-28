@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Real Estate Form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+ReactjS + Hooks + TypeScript + React-Router + ESLint + React-BootStrap form tested with react-testing-library and Cypress. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+This is a simple multi-step form with a progress indicator.
 
 ## Available Scripts
 
@@ -28,6 +30,22 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn lint`
+
+Runs linter to check warnings and errors.
+
+### `yarn format`
+
+Runs prettier to improve code formatting.
+
+### `yarn cypress:build:open`
+
+You should run this command only if you have had ran `yarn build` before. It will serve build folder to localhost on port 9154 and open cypress.
+
+### `yarn cypress:build:run`
+
+You should run this command only if you have had ran `yarn build` before. It will serve build folder to localhost on port 9154 and run cypress.
 
 ### `yarn eject`
 

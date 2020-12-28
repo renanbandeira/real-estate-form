@@ -1,0 +1,50 @@
+.progress-indicator {
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+	width: 340px;
+	margin: 30px auto;
+	padding-left: 20px;
+}
+.progress-indicator li {
+	list-style-type: none;
+	color: white;
+	text-transform: uppercase;
+	width: 60px;
+	font-size: 9px;
+	float: left;
+	position: relative;
+	text-align: center;
+}
+.progress-indicator li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: #333;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+
+.progress-indicator li:after {
+	content: '';
+	width: 60px;
+	height: 2px;
+	background: white;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+.progress-indicator li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none;
+}
+
+.progress-indicator li.active:before,  .progress-indicator li.active:after{
+	background: #27AE60;
+	color: white;
+}
