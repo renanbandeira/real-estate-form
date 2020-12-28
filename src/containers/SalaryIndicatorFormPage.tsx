@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 import { useHistory } from "react-router-dom";
 
 import { setSalaryIndicator } from "../redux/actions";
@@ -57,7 +57,10 @@ function SalaryIndicatorFormPage(props: ContainerProps) {
               />
             );
           })}
-          <Form.Text className="text-muted">Press Enter to submit</Form.Text>
+          <br />
+          <Button variant="primary" type="submit">
+            Submit
+          </Button>
         </Form.Group>
       </Form>
     </Page>

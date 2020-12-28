@@ -18,7 +18,7 @@ test('renders salary indicator input', () => {
   expect(screen.getAllByRole('radio')).toHaveLength(5);
 });
 
-test('sets phone number', () => {
+test('sets salary indicator', () => {
   const mockDispatch = (action: DefaultAction): void => {
     expect(action.type).toEqual(SET_SALARY_INDICATOR);
     expect(action.payload).toEqual(SALARY_INDICATORS['thirdIndicator']);
@@ -34,4 +34,22 @@ test('sets phone number', () => {
   const radio = screen.getAllByRole('radio')[2];
   fireEvent.change(radio, { target: { checked: true } });
   fireEvent.submit(radio);
+});
+
+test('sets salary indicator with submit button', () => {
+  const mockDispatch = (action: DefaultAction): void => {
+    expect(action.type).toEqual(SET_SALARY_INDICATOR);
+    expect(action.payload).toEqual(SALARY_INDICATORS['thirdIndicator']);
+  };
+
+  const wrapper = render(
+    <StaticRouter>
+      <SalaryIndicatorFormPage store={initialState} dispatch={mockDispatch} />
+    </StaticRouter>);
+
+  expect(screen.getAllByRole('radio')).toHaveLength(5);
+
+  const radio = screen.getAllByRole('radio')[2];
+  fireEvent.change(radio, { target: { checked: true } });
+  fireEvent.click(screen.getByRole('button'));
 });
